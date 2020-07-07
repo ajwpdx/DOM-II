@@ -1,8 +1,20 @@
 // Your code goes here
 console.log('hi')
 
-const headerScroll = document.querySelector('.main-navigation')
 
-headerScroll.addEventListener('mouseover', () => {
-    console.log('hello')
+//1. mouseover: turns nav links blue when moused-over
+const navScroll = document.querySelectorAll('.nav-link')
+
+navScroll.forEach(link =>{
+    link.addEventListener('mouseover', () => {
+    link.style.color = 'blue'
+})
+})
+
+//2. click: 
+
+const logoChange = document.querySelector ('.logo-heading')
+
+logoChange.addEventListener('click', () => {
+    logoChange.textContent = "Buf Sun"    
 })
