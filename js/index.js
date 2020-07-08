@@ -40,3 +40,34 @@ const imgSelector = document.querySelector('.intro img')
 document.addEventListener('dblclick', function (event){
            imgSelector.classList.toggle('off') 
     })
+
+
+//6. resize: reports the window size
+
+const heightOutput = document.querySelector('#height');
+const widthOutput = document.querySelector('#width');
+
+window.addEventListener('resize', function reportWindowSize() {
+    heightOutput.textContent = window.innerHeight;
+    widthOutput.textContent = window.innerWidth;
+  })
+
+//7. wheel:  the logo resizes when you wheel over it.
+
+let scale = 1;
+logoChange.onwheel = zoom;
+
+
+function zoom(event) {
+    event.preventDefault();
+  
+    scale += event.deltaY * -0.01;
+  
+    // Restrict scale
+    scale = Math.min(Math.max(.125, scale), 4);
+  
+    // Apply scale transform
+    logoChange.style.transform = `scale(${scale})`;
+  }
+  
+//8. 
