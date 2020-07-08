@@ -70,4 +70,24 @@ function zoom(event) {
     logoChange.style.transform = `scale(${scale})`;
   }
   
-//8. 
+//8. mouseout: when the mouse goes off of the nav item it turns green. 
+
+navScroll.forEach(link =>{
+    link.addEventListener('mouseout', () => {
+    link.style.color = 'green'
+})
+})
+
+//9. copy: copies data as uppercase (when pasted).
+
+const welcomeSelect = document.querySelector ('#welcome')
+
+welcomeSelect.addEventListener('copy', (event) => {
+    const selection = document.getSelection();
+    event.clipboardData.setData('text/plain', selection.toString().toUpperCase());
+    event.preventDefault();
+});
+
+//10. contextmenu: text one page changes back to black when right-clicking mouse. 
+
+document.addEventListener('contextmenu', () => bodyColor.style.color = 'black')
