@@ -15,8 +15,9 @@ navScroll.forEach(link =>{
 
 const logoChange = document.querySelector ('.logo-heading')
 
-logoChange.addEventListener('click', () => {
-    logoChange.textContent = "Buf Sun"    
+logoChange.addEventListener('click', (e) => {
+    logoChange.textContent = "Buf Sun" 
+    e.stopPropagation();   
 })
 
 //3. scroll: change text color to red when scrolled
@@ -37,7 +38,7 @@ document.addEventListener('keydown', function (event){
 
 const imgSelector = document.querySelector('.intro img')
 
-document.addEventListener('dblclick', function (event){
+document.addEventListener('dblclick', function (){
            imgSelector.classList.toggle('off') 
     })
 
@@ -91,3 +92,13 @@ welcomeSelect.addEventListener('copy', (event) => {
 //10. contextmenu: text one page changes back to black when right-clicking mouse. 
 
 document.addEventListener('contextmenu', () => bodyColor.style.color = 'black')
+
+
+//11. click
+
+
+const header = document.querySelector ('header')
+
+header.addEventListener('click', () => {
+    header.style.backgroundColor = 'yellow'
+})
